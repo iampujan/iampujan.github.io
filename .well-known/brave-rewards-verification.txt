@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: iampujan.github.io
+Token: 902e6b6040bf65337e64db502e85abf0341b51b79cf6c34b1903ba3c9f67fff8
