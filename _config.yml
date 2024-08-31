@@ -3,7 +3,7 @@ name: Pujan Thapa
 email: iampujan@outlook.com
 #canonical_url: https://edwinexemplar.com
 keywords: "Software Engineer, Python, Machine Learning, Deep Learning, AI"
-skills: "Software Engineer"
+skills: "Software Engineer | Machine Learning"
 baseurl:
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
@@ -14,7 +14,7 @@ social:
   - title: github
     url: https://github.com/iampujan
   - title: instagram
-    url: https://instagram.com/iampujan
+    url: https://instagram.com/travelwithpujan
   - title: medium
     url: https://medium.com/@iampujan
   - title: twitter
