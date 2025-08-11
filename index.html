@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pujan Thapa - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple animation for section fade-in */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900">Pujan Thapa</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#experience" class="text-gray-600 hover:text-indigo-600 transition-colors">Experience</a>
+                <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition-colors">Projects</a>
+                <a href="#education" class="text-gray-600 hover:text-indigo-600 transition-colors">Education</a>
+                <a href="#research" class="text-gray-600 hover:text-indigo-600 transition-colors">Research</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition-colors">Contact</a>
+            </nav>
+            <a href="cv.pdf" download class="hidden md:inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-transform transform hover:scale-105">
+                Download CV
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#experience" class="block py-2 text-gray-600 hover:text-indigo-600">Experience</a>
+            <a href="#projects" class="block py-2 text-gray-600 hover:text-indigo-600">Projects</a>
+            <a href="#education" class="block py-2 text-gray-600 hover:text-indigo-600">Education</a>
+            <a href="#research" class="block py-2 text-gray-600 hover:text-indigo-600">Research</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-indigo-600">Contact</a>
+            <a href="cv.pdf" download class="block mt-4 bg-indigo-600 text-white text-center px-4 py-2 rounded-lg hover:bg-indigo-700">Download CV</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16">
+
+        <!-- Hero Section -->
+        <section id="hero" class="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">AI/Machine Learning Engineer & Data Scientist</h1>
+                <p class="mt-4 text-lg text-gray-600">
+                    I design and deploy intelligent systems, build scalable data pipelines, and develop robust Python backends. Passionate about transforming complex data into actionable insights and creating AI-driven solutions that are both powerful and efficient.
+                </p>
+                <div class="mt-8 flex justify-center md:justify-start space-x-4">
+                    <!-- Social Media Links -->
+                    <a href="https://github.com/iampujan" class="text-gray-500 hover:text-indigo-600 transition-colors" aria-label="GitHub">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12.014c0 4.43 2.864 8.163 6.838 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.014C22 6.477 17.523 2 12 2z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/iampujan/" class="text-gray-500 hover:text-indigo-600 transition-colors" aria-label="LinkedIn">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" /></svg>
+                    </a>
+                    <a href="https://x.com/iampujan20" class="text-gray-500 hover:text-indigo-600 transition-colors" aria-label="Twitter">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                    </a>
+                    <a href="https://medium.com/@iampujan" class="text-gray-500 hover:text-indigo-600 transition-colors" aria-label="Medium">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.94 6a.54.54 0 00-.54.54v10.92a.54.54 0 00.54.54h.54a.54.54 0 00.54-.54V6.54a.54.54 0 00-.54-.54h-.54zM24 6.54a.54.54 0 00-.54-.54h-1.08a.54.54 0 00-.54.54v9.82a.54.54 0 00.54.54h1.08a.54.54 0 00.54-.54V6.54z"></path></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl ring-4 ring-white">
+                    <img src="https://placehold.co/400x400/a3a3a3/ffffff?text=Your+Photo" 
+                         alt="A portrait of Pujan Thapa" 
+                         class="w-full h-full object-cover"
+                         onerror="this.onerror=null;this.src='https://placehold.co/400x400/e0e0e0/333333?text=Image+Not+Found';">
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="mt-24 fade-in-section">
+            <h2 class="text-3xl font-bold text-center mb-12">Education</h2>
+            <div class="relative border-l-2 border-indigo-200 pl-10 max-w-3xl mx-auto">
+                <!-- Timeline Item 1 -->
+                <div class="mb-12">
+                    <div class="absolute -left-3.5 mt-1.5 w-6 h-6 bg-indigo-600 rounded-full border-4 border-white"></div>
+                    <p class="text-sm text-gray-500">2023 - 2025</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mt-1">M.S. in Data Science</h3>
+                    <p class="mt-1 text-gray-500">University of Naples Federico II, Italy</p>
+                    <p class="mt-2 text-gray-600">Specialized in Computer Vision and NLP. Thesis on "Computer Vision for Autonomous Driving".</p>
+                </div>
+                <!-- Timeline Item 2 -->
+                <div class="mb-12">
+                    <div class="absolute -left-3.5 mt-1.5 w-6 h-6 bg-indigo-600 rounded-full border-4 border-white"></div>
+                    <p class="text-sm text-gray-500">2015 - 2019</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mt-1">B.S. in Computer Science and Information Technology</h3>
+                    <p class="mt-1 text-gray-500">Tribhuvan University, Nepal</p>
+                    <p class="mt-2 text-gray-600">Graduated with High Honors. Member of the Computer Science Honors Society.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="mt-24 fade-in-section">
+            <h2 class="text-3xl font-bold text-center mb-12">Work Experience</h2>
+            <div class="relative border-l-2 border-indigo-200 pl-10 max-w-3xl mx-auto">
+                <!-- Timeline Item 1 -->
+                <div class="mb-12">
+                    <div class="absolute -left-3.5 mt-1.5 w-6 h-6 bg-indigo-600 rounded-full border-4 border-white"></div>
+                    <p class="text-sm text-gray-500">May 2024 - July 2024</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mt-1">ML Engineer, Omdena</h3>
+                    <p class="mt-2 text-gray-600">Researched and developed solution during the timeframe of 8 weeks
+                      for Omdena Challenge from the data collection phase using Google Earth Engine, exploratory data analysis, model development using
+                      both supervised and unsupervised learning and model deployment in Streamlit Community Cloud.</p>
+                </div>
+                <!-- Timeline Item 2 -->
+                <div class="mb-12">
+                    <div class="absolute -left-3.5 mt-1.5 w-6 h-6 bg-indigo-600 rounded-full border-4 border-white"></div>
+                    <p class="text-sm text-gray-500">Dec 2020 - Aug 2023</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mt-1">Software Engineer, Leapfrog Technology</h3>
+                    <p class="mt-2 text-gray-600">Designed and deployed scalable Python-based ML, data engineering, and backend systems using AWS, Airflow, Docker, and CI/CD, with robust monitoring and automation. Optimized data pipelines, re-architected workflows, and improved test coverage with pytest, Selenium, and JMeter.</p>
+                </div>
+                 <!-- Timeline Item 3 -->
+                <div class="mb-12">
+                    <div class="absolute -left-3.5 mt-1.5 w-6 h-6 bg-indigo-600 rounded-full border-4 border-white"></div>
+                    <p class="text-sm text-gray-500">May 2018 - Aug 2018</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mt-1">Software Engineer, Parentiv Inc.</h3>
+                    <p class="mt-2 text-gray-600">Researched and developed the Parentiv app’s backend architecture with Python (FastAPI), Google Cloud Firestore, and App Engine, integrating data from devices like Apple Watch and Google Home. Implemented NLP preprocessing with NLTK and spaCy, and ensured quality through unit and regression testing using pytest and JMeter.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mt-24 fade-in-section">
+            <h2 class="text-3xl font-bold text-center mb-12">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/6366f1/ffffff?text=Project+1" alt="Project 1 Screenshot" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">CREA3 (In Progress)</h3>
+                        <p class="text-gray-600 mb-4">CREA3 stands for Conflict Resolution with Equitative Algorithms funded by the European Union (EU) in
+collaboration with University of Naples Federico II and other companies and universities.The CREA3 Project aims to modernize civil law
+procedures throughout the European Union, enabling citizens, legal professionals, judicial authorities, and, in particular, vulnerable
+users to achieve swifter, fairer, and non-discriminatory access to justice. Its strategic vision aims to augment the performances of its
+predecessors, CRE and CREA2, seamlessly introducing electronic signatures, authenticated videoconferences with automated
+evidentiary logging, and third, providing inclusive access measures that support individuals with limited digital literacy and cognitive
+capabilities.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">FastAPI</span>
+                            <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded-full">PostgreSQL</span>
+                        </div>
+                        <div class="flex justify-end space-x-4">
+                            <a href="#" class="text-indigo-600 hover:underline">Live Demo</a>
+                            <a href="#" class="text-indigo-600 hover:underline">Source</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/ec4899/ffffff?text=Project+2" alt="Project 2 Screenshot" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Plant Disease Detection</h3>
+                        <p class="text-gray-600 mb-4">Developed a plant disease detection system using image analysis. Leveraged YOLO for object detection,
+alongside techniques like Non-negative Matrix Factorization (NMF) and Fuzzy Clustering for feature extraction and classification.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Roboflow</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Tensorflow</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">HuggingFace</span>
+                        </div>
+                        <div class="flex justify-end space-x-4">
+                            <a href="#" class="text-indigo-600 hover:underline">Live Demo</a>
+                            <a href="#" class="text-indigo-600 hover:underline">Source</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/10b981/ffffff?text=Project+3" alt="Project 3 Screenshot" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Political Leaning Detection in News</h3>
+                        <p class="text-gray-600 mb-4">Developed a web application to classify news articles as left-leaning, centrist, or right-leaning
+using fine-tuned BERT models. Enhanced model efficiency through quantization and Low-Rank Adaptation (LoRA). Deployed the solution
+using React JS, FastAPI and Docker, hosted on Azure Container Apps for real-time predictions, supporting media bias detection and
+analysis.</p>
+                         <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">React</span>
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python (FastAPI)</span>
+                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Docker</span>
+                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Azure</span>
+                        </div>
+                        <div class="flex justify-end space-x-4">
+                            <a href="#" class="text-indigo-600 hover:underline">Live Demo</a>
+                            <a href="#" class="text-indigo-600 hover:underline">Source</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="mt-24 fade-in-section">
+            <h2 class="text-3xl font-bold text-center mb-12">Research & Publications</h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Research Item 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-900">In Progress</h3>
+<!--                     <p class="text-sm text-gray-500 mt-1">Published in ACM CHI Conference, 2024</p>
+                    <p class="mt-3 text-gray-600">Our study analyzed the behavior of 10,000 users to quantify the negative effects of network latency on retention and satisfaction metrics.</p>
+                    <a href="#" class="inline-block mt-3 text-indigo-600 hover:underline font-medium">Read Paper &rarr;</a> -->
+                </div>
+                <!-- Research Item 2 -->
+<!--                 <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-900">Accessible by Design: A Framework for Inclusive Component Libraries</h3>
+                    <p class="text-sm text-gray-500 mt-1">Journal of Web Engineering, 2023</p>
+                    <p class="mt-3 text-gray-600">We propose a novel framework for building UI component libraries with accessibility (a11y) as a core principle, not an afterthought.</p>
+                    <a href="#" class="inline-block mt-3 text-indigo-600 hover:underline font-medium">Read Paper &rarr;</a>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- Interests Section -->
+        <section id="interests" class="mt-24 fade-in-section">
+            <h2 class="text-3xl font-bold text-center mb-12">Interests & Pursuits</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Work Interests</h3>
+                    <p class="text-gray-600">Design Systems, AI/ML Architecture, Developer Tooling, Web Performance, and creating accessible digital experiences.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Research Interests</h3>
+                    <p class="text-gray-600">Human-Computer Interaction, 3D/4D Computer Vision, Information Visualization, and the societal impact of technology.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Personal Interests</h3>
+                    <div class="flex justify-center flex-wrap gap-2 mt-3">
+                        <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">Traveling</span>
+                        <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">Hiking/Trekking</span>
+                        <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">Bike Rides</span>
+                        <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">Gaming</span>
+                        <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">Cycling</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mt-24 text-center fade-in-section">
+            <div class="max-w-2xl mx-auto">
+                 <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+                 <p class="text-lg text-gray-600 mb-8">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious vision. Feel free to reach out.
+                 </p>
+                 <a href="mailto:iampujan@outlook.com" class="inline-block bg-indigo-600 text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-indigo-700 transition-transform transform hover:scale-105">
+                    Say Hello
+                 </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 mt-16">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-600">
+            <div class="flex justify-center space-x-4 mb-4">
+                <!-- Social Media Links -->
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition-colors" aria-label="GitHub">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12.014c0 4.43 2.864 8.163 6.838 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.014C22 6.477 17.523 2 12 2z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition-colors" aria-label="LinkedIn">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" /></svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition-colors" aria-label="Twitter">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                </a>
+                 <a href="#" class="text-gray-500 hover:text-indigo-600 transition-colors" aria-label="Medium">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.94 6a.54.54 0 00-.54.54v10.92a.54.54 0 00.54.54h.54a.54.54 0 00.54-.54V6.54a.54.54 0 00-.54-.54h-.54zM24 6.54a.54.54 0 00-.54-.54h-1.08a.54.54 0 00-.54.54v9.82a.54.54 0 00.54.54h1.08a.54.54 0 00.54-.54V6.54z"></path></svg>
+                </a>
+            </div>
+            <p>&copy; 2025 Pujan Thapa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // JavaScript for scroll animations
+        const sections = document.querySelectorAll('.fade-in-section');
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
