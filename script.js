@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             download_cv: 'Download CV',
             hero_title: 'Creative Developer & Researcher',
             hero_subtitle: 'I build beautiful, responsive web applications and conduct research in human-computer interaction. Passionate about creating technology that is both functional and delightful to use.',
-            footer_text: '© 2025 John Doe. All rights reserved.',
+            footer_text: '© 2025 Pujan Thapa. All rights reserved.',
             // Add keys for all other text elements here
         },
         it: {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             download_cv: 'Scarica CV',
             hero_title: 'Sviluppatore Creativo e Ricercatore',
             hero_subtitle: 'Costruisco applicazioni web belle e reattive e conduco ricerche sull\'interazione uomo-computer. Appassionato di creare tecnologia che sia funzionale e piacevole da usare.',
-            footer_text: '© 2025 John Doe. Tutti i diritti riservati.',
+            footer_text: '© 2025 Pujan Thapa. Tutti i diritti riservati.',
             // ...
         },
         ne: {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             download_cv: 'CV डाउनलोड गर्नुहोस्',
             hero_title: 'रचनात्मक विकासकर्ता र अनुसन्धानकर्ता',
             hero_subtitle: 'म सुन्दर, उत्तरदायी वेब अनुप्रयोगहरू बनाउँछु र मानव-कम्प्युटर अन्तरक्रियामा अनुसन्धान गर्छु। प्रविधि सिर्जना गर्ने बारे भावुक छु जुन कार्यात्मक र प्रयोग गर्न रमाईलो दुवै छ।',
-            footer_text: '© 2025 John Doe. सबै अधिकार सुरक्षित।',
+            footer_text: '© 2025 Pujan Thapa. सबै अधिकार सुरक्षित।',
             // ...
         }
     };
