@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "siteTitle": "Pujan Thapa",
+    "description": "PhD Student, AI/ML Engineer & Data Scientist specializing in Computer Vision",
+    "lastUpdated": "2026-05-09"
+  },
+  "personal": {
+    "name": "Pujan Thapa",
+    "roles": ["PhD Student", "AI/ML Engineer", "Data Scientist", "Computer Vision Researcher"],
+    "tagline": "Building intelligent systems at the frontier of research and engineering.",
+    "bio": "I'm a PhD student and AI Engineer at the University of Naples Federico II, specializing in Computer Vision for Autonomous Driving. With 5+ years of industry experience, I bridge cutting-edge research and production-grade AI systems — from satellite imagery analysis to political bias detection in media.",
+    "email": "iampujan@outlook.com",
+    "location": "Naples, Italy",
+    "photo": "./assets/pujan.jpg",
+    "cv": "./My_CV.pdf",
+    "social": {
+      "github": "https://github.com/iampujan",
+      "linkedin": "https://www.linkedin.com/in/iampujan/",
+      "twitter": "https://x.com/iampujan20",
+      "medium": "https://medium.com/@iampujan"
+    }
+  },
+  "stats": [
+    { "value": "5+", "label": "Years Experience" },
+    { "value": "10+", "label": "Projects Shipped" },
+    { "value": "3", "label": "Languages Spoken" },
+    { "value": "2", "label": "Countries Worked" }
+  ],
+  "skills": [
+    {
+      "category": "AI & Machine Learning",
+      "items": ["PyTorch", "TensorFlow", "Scikit-learn", "HuggingFace", "YOLO", "BERT", "LoRA/PEFT", "LangChain", "OpenCV", "NLTK", "spaCy"]
+    },
+    {
+      "category": "Data Engineering",
+      "items": ["Apache Airflow", "PostgreSQL", "MongoDB", "AWS", "Google BigQuery", "Google Earth Engine", "Apache Spark"]
+    },
+    {
+      "category": "Backend & DevOps",
+      "items": ["Python", "FastAPI", "Flask", "Docker", "Kubernetes", "CI/CD", "Azure", "Streamlit", "pytest"]
+    },
+    {
+      "category": "Research Methods",
+      "items": ["Computer Vision", "NLP", "Object Detection", "Semantic Segmentation", "Model Quantization", "Transfer Learning", "Federated Learning"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.S. in Data Science",
+      "institution": "University of Naples Federico II",
+      "location": "Naples, Italy",
+      "period": "2023 – 2025",
+      "description": "Specialized in Computer Vision and NLP. Thesis: \"Computer Vision for Autonomous Driving\" — developing real-time perception systems for autonomous vehicles using transformer-based architectures.",
+      "highlights": ["Computer Vision", "NLP", "Deep Learning", "Autonomous Driving"]
+    },
+    {
+      "degree": "B.S. in Computer Science & Information Technology",
+      "institution": "Tribhuvan University",
+      "location": "Kathmandu, Nepal",
+      "period": "2015 – 2019",
+      "description": "Foundational education in computer science, software engineering, algorithms, and data structures.",
+      "highlights": ["Algorithms", "Software Engineering", "Databases", "Networking"]
+    }
+  ],
+  "experience": [
+    {
+      "role": "ML Engineer",
+      "company": "Omdena",
+      "type": "Contract",
+      "period": "May 2024 – Jul 2024",
+      "location": "Remote",
+      "description": "Developed an end-to-end ML solution for the Omdena Challenge in 8 weeks — from satellite data collection via Google Earth Engine, through EDA and model development (supervised + unsupervised), to deployment on Streamlit Community Cloud.",
+      "tags": ["Python", "Google Earth Engine", "Streamlit", "Scikit-learn", "Remote Sensing"]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Leapfrog Technology",
+      "type": "Full-time",
+      "period": "Dec 2020 – Aug 2023",
+      "location": "Kathmandu, Nepal",
+      "description": "Designed and deployed scalable Python-based ML, data engineering, and backend systems on AWS using Airflow, Docker, and CI/CD. Optimized data pipelines, re-architected legacy workflows, and improved test coverage with pytest, Selenium, and JMeter.",
+      "tags": ["Python", "AWS", "Airflow", "Docker", "FastAPI", "CI/CD", "pytest"]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Parentiv Inc.",
+      "type": "Internship",
+      "period": "May 2018 – Aug 2018",
+      "location": "Remote",
+      "description": "Built the Parentiv app backend using Python (FastAPI), Google Cloud Firestore, and App Engine. Integrated wearable device data (Apple Watch, Google Home) and implemented NLP preprocessing with NLTK and spaCy.",
+      "tags": ["Python", "FastAPI", "Google Cloud", "NLP", "NLTK", "spaCy", "pytest"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "crea3",
+      "title": "CREA3",
+      "subtitle": "EU-Funded Justice Platform",
+      "status": "In Progress",
+      "category": "AI/ML",
+      "description": "An EU-funded project with the University of Naples Federico II modernizing civil law procedures across Europe. Enables faster, fairer access to justice through electronic signatures, secure videoconferencing, automated evidence logging, and inclusive access for users with limited digital literacy.",
+      "tags": ["Python", "FastAPI", "PostgreSQL", "Computer Vision", "EU Horizon"],
+      "demo": "",
+      "source": "",
+      "featured": true
+    },
+    {
+      "id": "plant-disease",
+      "title": "Plant Disease Detection",
+      "subtitle": "Agricultural AI System",
+      "status": "Completed",
+      "category": "AI/ML",
+      "description": "Plant disease detection system using image analysis. Combines YOLO for object detection with Non-negative Matrix Factorization (NMF) and Fuzzy Clustering for feature extraction and multi-class classification of leaf diseases.",
+      "tags": ["Python", "YOLO", "TensorFlow", "HuggingFace", "Roboflow", "OpenCV"],
+      "demo": "",
+      "source": "",
+      "featured": true
+    },
+    {
+      "id": "political-leaning",
+      "title": "Political Leaning Detector",
+      "subtitle": "News Media Bias Analysis",
+      "status": "Completed",
+      "category": "NLP",
+      "description": "Web app classifying news articles as left-leaning, centrist, or right-leaning using fine-tuned BERT with LoRA for efficient parameter adaptation. Deployed with React JS, FastAPI, and Docker on Azure Container Apps for real-time predictions.",
+      "tags": ["BERT", "LoRA", "React", "FastAPI", "Docker", "Azure", "Python"],
+      "demo": "",
+      "source": "",
+      "featured": true
+    }
+  ],
+  "research": {
+    "publications": [],
+    "ongoing": [
+      {
+        "title": "Computer Vision for Autonomous Driving",
+        "description": "Research on perception systems for autonomous vehicles — real-time object detection, lane segmentation, and depth estimation. Exploring transformer-based architectures for multi-task learning in driving scenarios.",
+        "tags": ["Computer Vision", "Autonomous Driving", "Object Detection", "Transformers", "Multi-task Learning"],
+        "status": "Thesis — In Progress",
+        "venue": "University of Naples Federico II"
+      }
+    ],
+    "interests": [
+      "3D / 4D Computer Vision",
+      "Autonomous Systems & Perception",
+      "Efficient Deep Learning (Quantization, LoRA, PEFT)",
+      "Human-Computer Interaction",
+      "Information Visualization",
+      "Federated & Privacy-Preserving ML",
+      "Societal Impact of AI"
+    ]
+  },
+  "interests": {
+    "professional": [
+      "AI/ML System Architecture",
+      "Research-to-Production Pipelines",
+      "Developer Tooling & DX",
+      "Accessible AI Systems",
+      "Web Performance"
+    ],
+    "personal": [
+      "Traveling",
+      "Hiking & Trekking",
+      "Bike Rides",
+      "Gaming",
+      "Cycling"
+    ]
+  }
+}
