@@ -363,13 +363,14 @@
     <p>Connect to your GitHub repository to enable dynamic content updates. Changes you make here are committed directly to your repo — no git commands needed.</p>
 
     <div class="setup-steps">
-      <div class="setup-step">Go to <strong>GitHub → Settings → Developer Settings → Personal Access Tokens → Fine-grained tokens</strong></div>
-      <div class="setup-step">Create a token with <strong>Contents: Read &amp; Write</strong> permission for your <code style="font-family:monospace;background:var(--surface-2);padding:2px 6px;border-radius:4px;font-size:12px">iampujan.github.io</code> repository</div>
-      <div class="setup-step">Paste the token below — it's stored only in your browser's localStorage</div>
+      <div class="setup-step">Go to <strong>GitHub → Settings → Developer Settings → Personal Access Tokens</strong></div>
+      <div class="setup-step"><strong>Option A (recommended):</strong> Choose <em>Fine-grained tokens</em> → New token → select your <code style="font-family:monospace;background:var(--surface-2);padding:2px 6px;border-radius:4px;font-size:12px">iampujan.github.io</code> repo → under <em>Repository permissions</em> set <strong>Contents → Read and write</strong></div>
+      <div class="setup-step"><strong>Option B (classic):</strong> Choose <em>Tokens (classic)</em> → New token → tick the <strong>repo</strong> checkbox (full repo access)</div>
+      <div class="setup-step">Copy the generated token and paste it below</div>
     </div>
 
     <div class="info-box">
-      ⚠ Never share this token. It's stored locally in your browser and never sent anywhere except the GitHub API.
+      ⚠ The token is stored only in your browser's localStorage — never sent anywhere except directly to the GitHub API. If publish fails with "Resource not accessible", your token is missing the Contents write permission (see Step 2).
     </div>
 
     <div class="field">

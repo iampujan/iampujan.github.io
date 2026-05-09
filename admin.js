@@ -110,7 +110,15 @@ async function publishContent() {
     status('Published! Site updating…', 'success');
     setTimeout(() => status('Idle', 'idle'), 4000);
   } catch (err) {
-    status(`Publish failed: ${err.message}`, 'error');
+    let msg = err.message;
+    if (msg.includes('Resource not accessible')) {
+      msg = 'Token lacks write permission. In GitHub → Settings → Developer Settings → Fine-grained tokens, ensure "Contents: Read and write" is set for this repo. Classic tokens need the "repo" scope.';
+    } else if (msg.includes('Bad credentials') || msg.includes('401')) {
+      msg = 'Invalid token — it may have expired. Reconnect with a new token.';
+    } else if (msg.includes('404')) {
+      msg = 'Repo or file not found — check owner/repo name in setup.';
+    }
+    status(`Publish failed: ${msg}`, 'error');
   }
 }
 
@@ -239,6 +247,15 @@ function collectFormData() {
     const interestsVal = getVal('f-research-interests');
     if (interestsVal) content.research.interests = interestsVal.split('\n').map(r => r.trim()).filter(Boolean);
   }
+}
+
+// ── Helper: last direct-child .field ─────────────────────────
+// .querySelector('.field:last-child') is wrong when .field elements exist
+// inside nested grid wrappers — it finds the first nested last-child, not
+// the last direct child. Use :scope > .field to restrict to direct children.
+function lastField(el) {
+  const fields = el.querySelectorAll(':scope > .field');
+  return fields[fields.length - 1];
 }
 
 // ── Tags Input Widget ─────────────────────────────────────────
@@ -377,7 +394,7 @@ function renderSkills() {
         <label>Skills (press Enter to add)</label>
       </div>`;
     const tagsWrap = createTagsInput(`tags-${i}`, cat.items || []);
-    card.querySelector('.field:last-child').appendChild(tagsWrap);
+    lastField(card).appendChild(tagsWrap);
 
     const catInput = card.querySelector(`#skill-cat-name-${i}`);
     catInput.addEventListener('input', () => {
@@ -416,7 +433,7 @@ function renderEducation() {
       </div>
       <div class="field"><label>Description</label><textarea id="edu-desc-${i}" rows="3">${escHtml(item.description || '')}</textarea></div>
       <div class="field"><label>Highlights / Tags (press Enter to add)</label></div>`;
-    card.querySelector('.field:last-child').appendChild(createTagsInput(`edu-tags-${i}`, item.highlights || []));
+    lastField(card).appendChild(createTagsInput(`edu-tags-${i}`, item.highlights || []));
     card.querySelector('.remove-edu-btn').onclick = () => { card.remove(); setUnsaved(true); reIndexEdu(); };
     wrapper.appendChild(card);
   };
@@ -477,7 +494,7 @@ function renderExperience() {
       </div>
       <div class="field"><label>Description</label><textarea id="exp-desc-${i}" rows="4">${escHtml(item.description || '')}</textarea></div>
       <div class="field"><label>Tech Tags (press Enter to add)</label></div>`;
-    card.querySelector('.field:last-child').appendChild(createTagsInput(`exp-tags-${i}`, item.tags || []));
+    lastField(card).appendChild(createTagsInput(`exp-tags-${i}`, item.tags || []));
     card.querySelector('.remove-exp-btn').onclick = () => { card.remove(); setUnsaved(true); };
     wrapper.appendChild(card);
   };
@@ -537,7 +554,7 @@ function renderProjects() {
         <div class="field"><label>Source Code URL</label><input type="url" id="proj-source-${i}" value="${escHtml(item.source || '')}"></div>
       </div>
       <div class="field"><label>Tags (press Enter to add)</label></div>`;
-    card.querySelector('.field:last-child').appendChild(createTagsInput(`proj-tags-${i}`, item.tags || []));
+    lastField(card).appendChild(createTagsInput(`proj-tags-${i}`, item.tags || []));
     card.querySelector('.remove-proj-btn').onclick = () => { card.remove(); setUnsaved(true); };
     wrapper.appendChild(card);
   };
@@ -582,7 +599,7 @@ function renderResearch() {
       </div>
       <div class="field"><label>Description</label><textarea id="on-desc-${i}" rows="4">${escHtml(item.description || '')}</textarea></div>
       <div class="field"><label>Tags</label></div>`;
-    div.querySelector('.field:last-child').appendChild(createTagsInput(`on-tags-${i}`, item.tags || []));
+    lastField(div).appendChild(createTagsInput(`on-tags-${i}`, item.tags || []));
     div.querySelector('.remove-ongoing-btn').onclick = () => { div.remove(); setUnsaved(true); };
     ongoingWrap.appendChild(div);
   };
@@ -640,10 +657,9 @@ function renderInterests() {
 
 // ── Navigate Sections ─────────────────────────────────────────
 async function navigate(section) {
-  if (hasUnsavedChanges && section !== currentSection) {
-    const ok = confirm('You have unsaved changes. Navigate away without publishing?');
-    if (!ok) return;
-    setUnsaved(false);
+  // Auto-collect the current section's data before leaving (no blocking dialog)
+  if (currentSection !== 'dashboard' && currentSection !== section) {
+    collectFormData();
   }
 
   currentSection = section;
